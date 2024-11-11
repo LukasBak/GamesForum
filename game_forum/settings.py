@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
+if os.path.isfile('env.py'):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j)w+_-xskxo815t!ljg3^^eiy5hm8hg_80z4y82iwlc+18v(t*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-lukasbak-gamesforum-airsjp044nn.ws-eu115.gitpod.io'
+ALLOWED_HOSTS = ['8000-lukasbak-gamesforum-maoxttvnj1w.ws-eu116.gitpod.io'
 '.herokuapp.com']
 
 
@@ -75,12 +79,12 @@ WSGI_APPLICATION = 'game_forum.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 
 # Password validation
