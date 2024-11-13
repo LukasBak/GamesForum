@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j)w+_-xskxo815t!ljg3^^eiy5hm8hg_80z4y82iwlc+18v(t*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-lukasbak-gamesforum-maoxttvnj1w.ws-eu116.gitpod.io'
+ALLOWED_HOSTS = ['8000-lukasbak-gamesforum-maoxttvnj1w.ws-eu116.gitpod.io',
 '.herokuapp.com']
 
 
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'games_forum',
+    'tinymce',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
