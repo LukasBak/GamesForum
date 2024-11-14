@@ -88,6 +88,10 @@ DATABASES = {
 }
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-lukasbak-gamesforum-maoxttvnj1w.ws-eu116.gitpod.io",
+    "https://*.herokuapp.com"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
