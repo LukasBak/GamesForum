@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from games_forum import views as index_views
 
 urlpatterns = [
-    path('', index_views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('tinymce/', include('tinymce.urls')),
-]
+    path('', include('gamesforum.urls')),
+    path('tinymce/', include('tinymce.urls')), 
+    ]
+
